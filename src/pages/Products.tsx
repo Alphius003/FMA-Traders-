@@ -18,23 +18,34 @@ const Products = () => {
   ];
 
   return (
-    <section className="container mx-auto my-10 px-6">
-      <h2 className="text-4xl font-bold text-center mb-6">Our Products</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {products.map((product, index) => (
-          <div key={index} className="shadow-md rounded-lg overflow-hidden">
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-40 object-cover"
-            />
-            <div className="p-4 text-center">
-              <h3 className="text-lg font-semibold">{product.name}</h3>
-            </div>
-          </div>
-        ))}
+    <>
+      {/* Banner Section */}
+      <div className="mt-20"> {/* pushes content below fixed navbar */}
+        <img
+          src="../assets/Product Banner.jpg"
+          alt="Product Banner"
+          className="w-full object-cover max-h-[400px]"
+        />
       </div>
-    </section>
+
+      {/* Products Grid */}
+      <section className="container mx-auto my-10 px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {products.map((product, index) => (
+            <div key={index} className="shadow-md rounded-lg overflow-hidden">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-40 object-cover"
+              />
+              <div className="p-4 text-center">
+                <h3 className="text-lg font-semibold">{product.name}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 

@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-
-// Function to dynamically load images
-const getImage = (imageName: string) => {
-  return `/assets/${imageName}`;
-};
+import basmatiBanner from "../assets/Basmati Banner.png";
+import nonBasmatiBanner from "../assets/Non Basmati Banner.png";
+import southIndianBanner from "../assets/South Indian Banner.png";
 
 // Sample Product Data
 const productData: Record<string, { name: string; image: string }[]> = {
@@ -28,6 +26,20 @@ const productData: Record<string, { name: string; image: string }[]> = {
     { name: "Matta Rice", image: "7.jpeg" },
     { name: "Swarna Rice", image: "8.jpeg" },
   ],
+  SouthIndian: [
+    { name: "NeiKitchadi Ponni Boiled Rice", image: "17.jpeg" },
+    { name: "Manachanallur Ponni Boiled Rice", image: "18.jpeg" },
+    { name: "Rajabhogam Ponni Boiled Rice", image: "19.jpeg" },
+    { name: "VIP Special Ponni Boiled Rice", image: "20.jpeg" },
+    { name: "Akshaya Ponni Boiled Rice", image: "21.jpeg" },
+    { name: "Tanjore Ponni Boiled Rice", image: "22.jpeg" },
+    { name: "Classic Ponni Boiled Rice", image: "23.jpeg" },
+    { name: "Premium Ponni Boiled Rice", image: "24.jpeg" },
+  ],
+};
+
+const getImage = (imageName: string) => {
+  return `/assets/${imageName}`;
 };
 
 const ProductDetails: React.FC = () => {
@@ -38,6 +50,20 @@ const ProductDetails: React.FC = () => {
   const [userEmail, setUserEmail] = useState("");
   const [selectedRice, setSelectedRice] = useState("");
   const [message, setMessage] = useState("Can I get the details about this variety of rice?");
+
+  // ✅ Now getBannerImage() is using the correct productType
+  const getBannerImage = () => {
+    switch (productType) {
+      case "Basmati":
+        return basmatiBanner;
+      case "NonBasmati":
+        return nonBasmatiBanner;
+      case "SouthIndian":
+        return southIndianBanner;
+      default:
+        return "";
+    }
+  };
 
   if (!productType || !productData[productType]) {
     return (
@@ -50,33 +76,34 @@ const ProductDetails: React.FC = () => {
 
   const products = productData[productType];
 
-  // Handle Card Click (Open Modal)
   const handleCardClick = (productName: string) => {
     setSelectedProduct(productName);
     setSelectedRice(productName);
     setShowModal(true);
   };
 
-  // Handle Form Submission (Send Email)
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const email = "alphiyapaul003@gmail.com";
     const subject = `Rice Inquiry - ${selectedRice}`;
     const body = `Hello,\n\nMy name is ${userName}. I am interested in learning more about ${selectedRice}.\n\nMessage: ${message}\n\nYou can contact me at: ${userEmail}.\n\nThank you!`;
 
-    // Open Email Client (mailto)
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    // Close Modal
     setShowModal(false);
   };
 
   return (
     <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-8">{productType} Rice</h2>
+      {/* ✅ Banner Section */}
+      <div
+        className="w-full h-64 bg-cover bg-center mb-10"
+        style={{ backgroundImage: `url(${getBannerImage()})` }}
+      ></div>
 
-        {/* Grid Layout */}
+      <div className="container mx-auto px-6">
+        {/* <h2 className="text-3xl font-bold text-center mb-8">{productType} Rice</h2> */}
+
+        {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
           {products.map((product, index) => (
             <div
@@ -91,7 +118,7 @@ const ProductDetails: React.FC = () => {
         </div>
       </div>
 
-      {/* Modal (Popup Overlay) */}
+      {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg shadow-lg w-96">

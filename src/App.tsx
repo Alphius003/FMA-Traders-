@@ -47,13 +47,13 @@ const App: React.FC = () => {
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<ProductsSection />} />
           <Route path="/products/:productType" element={<ProductDetails />} />
+
           {/* <Route path="/price" element={<Price />} /> */}
           {/* <Route path="/blog" element={<Blog />} /> */}
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
 
-      {/* Global Footer (Always Visible) */}
       <Footer />
     </Router>
   );

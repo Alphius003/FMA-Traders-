@@ -1,41 +1,148 @@
 import React from "react";
+import {
+  FaGlobe,
+  FaSeedling,
+  FaWarehouse,
+  FaTags,
+} from "react-icons/fa";
+import bannerImage from "../assets/About banner.jpg";
 
 const About: React.FC = () => {
+  const sectionStyle = {
+    backgroundImage: "url('src/assets/5.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "100vh",
+    padding: "4rem 2rem",
+    display: "flex",
+    flexDirection: "column" as const,
+    alignItems: "center",
+    justifyContent: "center",
+  };
+
+  const iconStyle = {
+    fontSize: "2rem",
+    color: "#F7740C",
+    minWidth: "40px",
+  };
+
+  const cardStyle = {
+    background: "#fff",
+    padding: "2rem",
+    borderRadius: "16px",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+    flex: 1,
+    margin: "1rem",
+    minWidth: "280px",
+  };
+
   return (
-    <section className="h-screen flex items-center justify-center px-12" style={{ backgroundImage: "url('src/assets/Page 2.png')" }}>
-      {/* Left: Image */}
-      <div className="w-1/2 flex justify-center">
+    <>
+      {/* Banner */}
+      <div style={{ width: "100%", marginTop: "60px" }}>
         <img
-          src="/assets/about-us.png"
-          alt="FMA Traders - Quality Rice"
-          className="w-180 h-100"
+          src={bannerImage}
+          alt="About Us Banner"
+          style={{
+            width: "100%",
+            height: "300px",
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
         />
       </div>
 
-      {/* Right: Text */}
-      <div className="w-1/2 text-left relative -mt-10">
-        <h2 className="text-4xl font-bold text-[#F7740C] mb-4">
-          About FMA Traders
+      {/* Content */}
+      <section style={sectionStyle}>
+        <h2
+          style={{
+            fontSize: "1.4rem",
+            fontWeight: "light",
+            color: "#F7740C",
+            marginBottom: "10px",
+            
+            marginTop: "-300px",
+            textAlign: "center",
+            fontStyle: "italic",
+          }}
+        >
+          Discover who we are, what we do, and how we deliver excellence across global rice markets.
         </h2>
-        <p className="text-gray-900 text-lg leading-relaxed">
-          FMA Traders is a leading supplier of <strong>premium Basmati and Non-Basmati rice</strong>,  
-          trusted by customers across India and beyond. Located in  
-          <strong>Tirupattur, Sivagangai District, Tamil Nadu</strong>, we take pride in sourcing 
-          only the best grains to ensure purity, aroma, and taste in every pack.
+
+        <p
+          style={{
+            fontSize: "1.15rem",
+            color: "#333",
+            lineHeight: "1.8",
+            marginBottom: "2rem",
+            textAlign: "center",
+            maxWidth: "900px",
+          }}
+        >
+          FMA Trading is a leading rice export house based in India, known for its premium-quality grains,
+          advanced processing, and worldwide network. From paddy to packaging, we manage every detail to ensure
+          quality and trust. We also specialize in private-label and custom rebranding for global clients — making your product truly yours.
         </p>
 
-        <p className="text-gray-900 text-lg leading-relaxed mt-3">
-          Our commitment to quality and transparency has made us a preferred  
-          choice for <strong>households, restaurants, and bulk buyers</strong>. Whether for  
-          local consumption or export, we guarantee consistency and superior standards.
-        </p>
+        {/* Cards */}
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: "1.5rem",
+          }}
+        >
+          <div style={cardStyle}>
+            <FaSeedling style={iconStyle} />
+            <h3 style={{ fontWeight: "bold", fontSize: "1.25rem", marginTop: "0.5rem" }}>
+              Diverse Rice Portfolio
+            </h3>
+            <p style={{ marginTop: "0.5rem" }}>
+              From fragrant Basmati to robust Non-Basmati varieties like Sona Masoori, IR64, and Ponni — available in both Parboiled and Raw formats — our range is curated for kitchens worldwide.
+            </p>
+          </div>
 
-        <p className="text-gray-600 text-lg mt-4 font-semibold">
-          "From Our Fields to Your Table – The Taste of Tradition & Purity!"
-        </p>
-      </div>
+          <div style={cardStyle}>
+            <FaWarehouse style={iconStyle} />
+            <h3 style={{ fontWeight: "bold", fontSize: "1.25rem", marginTop: "0.5rem" }}>
+              Modern Processing & Mission
+            </h3>
+            <p style={{ marginTop: "0.5rem" }}>
+              With cutting-edge milling and hygienic packaging, we maintain flavor and shelf-life at every stage.
+              Our mission: to empower farmers and promote sustainability while delivering world-class rice.
+            </p>
+          </div>
 
-    </section>
+          <div style={cardStyle}>
+            <FaGlobe style={iconStyle} />{" "}
+            {/* <FaTags style={{ ...iconStyle, marginLeft: "10px" }} /> */}
+            <h3 style={{ fontWeight: "bold", fontSize: "1.25rem", marginTop: "0.5rem" }}>
+              Global Reach & Rebranding
+            </h3>
+            <p style={{ marginTop: "0.5rem" }}>
+              Our rice reaches kitchens across the Middle East, Europe, Africa, and North America. With our
+              tailored **private labeling & rebranding services**, we help businesses launch their own rice brand with
+              confidence and authenticity.
+            </p>
+          </div>
+        </div>
+
+        {/* Tagline */}
+        <p
+          style={{
+            fontSize: "2rem",
+            // paddingBottom:"200px",
+            marginTop: "3rem",
+            fontStyle: "italic",
+            textAlign: "center",
+            color: "#555",
+          }}
+        >
+          “From Our Fields to Your Table – The Taste of Tradition & Purity!”
+        </p>
+      </section>
+    </>
   );
 };
 

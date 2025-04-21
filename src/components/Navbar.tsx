@@ -1,8 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaEnvelope, FaClock, FaSearch, FaPhoneAlt } from "react-icons/fa";
 
 const NavBar: React.FC = () => {
+  const location = useLocation(); // Get current route
+
   return (
     <>
       {/* Fixed Navigation Container */}
@@ -16,8 +18,8 @@ const NavBar: React.FC = () => {
           <div className="flex items-center gap-4 text-white">
             <div className="flex items-center gap-1">
               <FaEnvelope />
-              <a href="mailto:@gmail.com" className="hover:underline">
-                @gmail.com
+              <a href="mailto:fmatrading@gmail.com" className="hover:underline">
+                fmatrading@gmail.com
               </a>
             </div>
             <div className="flex items-center gap-1">
@@ -33,24 +35,32 @@ const NavBar: React.FC = () => {
             <img src="src/assets/logo.png" className="h-10" alt="FMA Traders Logo" />
           </div>
           <nav className="flex gap-6 text-gray-600 text-lg">
-            <Link to="/" className="text-[#F0832C] font-semibold underline">
-              Home
-            </Link>
-            <Link to="/about">About</Link>
-            <Link to="/products">Products</Link>
-            <Link to="/price">Price</Link>
-            <Link to="/blog">Blog</Link>
-            <Link to="/contact">Contact</Link>
+            {[
+              { path: "/", name: "Home" },
+              { path: "/about", name: "About" },
+              { path: "/products", name: "Products" },
+              { path: "/contact", name: "Contact" }
+            ].map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`${
+                  location.pathname === link.path ? "text-[#F0832C] font-semibold underline" : ""
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
           </nav>
           <div className="flex items-center gap-4">
-            <FaSearch className="text-[#35678A] text-xl cursor-pointer" />
+            {/* <FaSearch className="text-[#35678A] text-xl cursor-pointer" /> */}
             <div className="flex items-center gap-2 text-[#35678A]">
               <div className="bg-[#35678A] text-white p-2 rounded-full">
                 <FaPhoneAlt />
               </div>
               <div>
                 <p className="text-sm text-gray-500">Call Anytime</p>
-                <p className="text-lg font-semibold">+91-</p>
+                <p className="text-lg font-semibold">+91-7010085338</p>
               </div>
             </div>
           </div>
