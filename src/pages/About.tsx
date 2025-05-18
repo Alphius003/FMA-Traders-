@@ -1,23 +1,19 @@
 import React from "react";
-import {
-  FaGlobe,
-  FaSeedling,
-  FaWarehouse,
-  FaTags,
-} from "react-icons/fa";
+import { FaGlobe, FaSeedling, FaWarehouse, FaTags } from "react-icons/fa";
 import bannerImage from "../assets/About banner.jpg";
 
 const About: React.FC = () => {
   const sectionStyle = {
     backgroundImage: "url('src/assets/5.png')",
-    backgroundSize: "cover",
+    backgroundSize:"",
     backgroundPosition: "center",
-    minHeight: "100vh",
+    // minHeight: "100vh",
     padding: "4rem 2rem",
     display: "flex",
     flexDirection: "column" as const,
     alignItems: "center",
     justifyContent: "center",
+    height: "100vh"
   };
 
   const iconStyle = {
@@ -60,7 +56,6 @@ const About: React.FC = () => {
             fontWeight: "light",
             color: "#F7740C",
             marginBottom: "10px",
-            
             marginTop: "-300px",
             textAlign: "center",
             fontStyle: "italic",
@@ -93,6 +88,7 @@ const About: React.FC = () => {
             gap: "1.5rem",
           }}
         >
+          {/* Rice Portfolio */}
           <div style={cardStyle}>
             <FaSeedling style={iconStyle} />
             <h3 style={{ fontWeight: "bold", fontSize: "1.25rem", marginTop: "0.5rem" }}>
@@ -103,26 +99,38 @@ const About: React.FC = () => {
             </p>
           </div>
 
+          {/* Vision Card */}
           <div style={cardStyle}>
             <FaWarehouse style={iconStyle} />
-            <h3 style={{ fontWeight: "bold", fontSize: "1.25rem", marginTop: "0.5rem" }}>
-              Modern Processing & Mission
+            <h3 style={{ fontWeight: "bold", fontSize: "1.5rem", marginTop: "0.5rem" }}>
+              Our Vision
             </h3>
             <p style={{ marginTop: "0.5rem" }}>
-              With cutting-edge milling and hygienic packaging, we maintain flavor and shelf-life at every stage.
-              Our mission: to empower farmers and promote sustainability while delivering world-class rice.
+              To empower farmers, promote sustainability, and deliver world-class rice to every household globally.
             </p>
           </div>
 
+                    {/* Mission Card */}
           <div style={cardStyle}>
-            <FaGlobe style={iconStyle} />{" "}
-            {/* <FaTags style={{ ...iconStyle, marginLeft: "10px" }} /> */}
+            <FaTags style={iconStyle} />
+            <h3 style={{ fontWeight: "bold", fontSize: "1.5rem", marginTop: "0.5rem" }}>
+              Our Mission
+            </h3>
+            <p style={{ marginTop: "0.5rem" }}>
+              With cutting-edge milling and hygienic packaging, we maintain the flavor and shelf-life of every grain — from field to table.
+            </p>
+          </div>
+
+
+          {/* Global Reach */}
+          <div style={cardStyle}>
+            <FaGlobe style={iconStyle} />
             <h3 style={{ fontWeight: "bold", fontSize: "1.25rem", marginTop: "0.5rem" }}>
               Global Reach & Rebranding
             </h3>
             <p style={{ marginTop: "0.5rem" }}>
               Our rice reaches kitchens across the Middle East, Europe, Africa, and North America. With our
-              tailored **private labeling & rebranding services**, we help businesses launch their own rice brand with
+              tailored private labeling & rebranding services, we help businesses launch their own rice brand with
               confidence and authenticity.
             </p>
           </div>
@@ -132,7 +140,6 @@ const About: React.FC = () => {
         <p
           style={{
             fontSize: "2rem",
-            // paddingBottom:"200px",
             marginTop: "3rem",
             fontStyle: "italic",
             textAlign: "center",

@@ -28,13 +28,13 @@ const productData: Record<string, { name: string; image: string }[]> = {
   ],
   SouthIndian: [
     { name: "NeiKitchadi Ponni Boiled Rice", image: "17.jpeg" },
-    { name: "Manachanallur Ponni Boiled Rice", image: "18.jpeg" },
-    { name: "Rajabhogam Ponni Boiled Rice", image: "19.jpeg" },
-    { name: "VIP Special Ponni Boiled Rice", image: "20.jpeg" },
-    { name: "Akshaya Ponni Boiled Rice", image: "21.jpeg" },
-    { name: "Tanjore Ponni Boiled Rice", image: "22.jpeg" },
-    { name: "Classic Ponni Boiled Rice", image: "23.jpeg" },
-    { name: "Premium Ponni Boiled Rice", image: "24.jpeg" },
+    { name: "Manachanallur Ponni Rice", image: "18.jpg" },
+    { name: "Rajabhogam Ponni Boiled Rice", image: "19.jpg" },
+    { name: "VIP Special Ponni Boiled Rice", image: "20.jpg" },
+    { name: "Akshaya Ponni Boiled Rice", image: "21.jpg" },
+    { name: "Tanjore Ponni Boiled Rice", image: "22.jpg" },
+    { name: "Classic Ponni Boiled Rice", image: "23.jpg" },
+    { name: "Premium Ponni Boiled Rice", image: "24.jpg" },
   ],
 };
 
@@ -95,10 +95,14 @@ const ProductDetails: React.FC = () => {
   return (
     <section className="py-16 bg-gray-50">
       {/* ✅ Banner Section */}
-      <div
-        className="w-full h-64 bg-cover bg-center mb-10"
-        style={{ backgroundImage: `url(${getBannerImage()})` }}
-      ></div>
+      <div className="w-full mb-10">
+        <img
+          src={getBannerImage()}
+          alt={`${productType} Banner`}
+          className="w-full h-auto object-cover"
+        />
+      </div>
+
 
       <div className="container mx-auto px-6">
         {/* <h2 className="text-3xl font-bold text-center mb-8">{productType} Rice</h2> */}
@@ -109,11 +113,16 @@ const ProductDetails: React.FC = () => {
             <div
               key={index}
               onClick={() => handleCardClick(product.name)}
-              className="cursor-pointer bg-white p-6 rounded-lg shadow-md text-center w-80 h-80 flex flex-col justify-center items-center"
+              className="cursor-pointer bg-white p-4 rounded-lg shadow-md text-center flex flex-col items-center transition-transform duration-200 hover:scale-105"
             >
-              <img src={getImage(product.image)} alt={product.name} className="w-60 h-60 object-cover rounded-lg mb-4" />
-              <h3 className="text-lg font-bold">{product.name}</h3>
+              <img
+                src={getImage(product.image)}
+                alt={product.name}
+                className="w-full aspect-square object-cover rounded-lg mb-4"
+              />
+              <h3 className="text-base font-semibold">{product.name}</h3>
             </div>
+
           ))}
         </div>
       </div>
