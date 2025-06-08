@@ -6,9 +6,9 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-bold mb-4">FMA Trders</h3>
+            <h3 className="text-lg font-bold mb-4">FMA Trading</h3>
             <p className="text-sm">
-              Established in 2020, FMA Traders has been a leader in the
+              Established in 2020, FMA Trading has been a leader in the
               rice industry.
             </p>
           </div>
@@ -72,18 +72,18 @@ const Footer: React.FC = () => {
             <p className="text-sm">+91-7010085338</p>
             <p className="text-sm">fmatrading@gmail.com</p>
             <p className="text-sm">
-              FMA Traders, Tirupattur, Sivagangai District.
+              FMA Trading, Tirupattur, Sivagangai District.
             </p>
           </div>
         </div>
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p>
-            © 2025 FMA Traders. All Rights Reserved | Developed &
-            marketing By:{" "}
+            © 2025 FMA Trading. All Rights Reserved | Developed &
+            Marketing By:{"SiteSphere"}
             <a
               className="hover:text-gray-400"
             >
-              Alphius
+              
             </a>
           </p>
         </div>

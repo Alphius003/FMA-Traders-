@@ -1,19 +1,19 @@
-
-import contactBanner from "../assets/Contact Banner.png"; // Adjust the path if needed
+import contactBanner from "../assets/Contact Banner.png"; 
 
 const Contact = () => {
   return (
-    <section className="bg-gray-100">
+    <section className="min-h-screen flex flex-col">
       {/* Banner */}
-      <div
-        className="w-full h-[300px] bg-cover bg-center mt-16"
-        style={{
-          backgroundImage: `url(${contactBanner})`,
-        }}
-      ></div>
+      <div className="mt-16">
+        <img
+          src={contactBanner}
+          alt="Contact Banner"
+          className="w-full max-h-[300px] object-cover"
+        />
+      </div>
 
       {/* Form Section */}
-      <div className="pt-[5rem] pb-[12rem] container mx-auto px-6">
+      <div className="pt-10 container mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-8">
           Get In Touch With Us
         </h2>

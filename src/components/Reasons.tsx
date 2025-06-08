@@ -29,7 +29,7 @@ const Reasons: React.FC = () => {
     {
       title: "Customer-First Philosophy",
       description:
-        "At FMA Traders, we build lasting relationships by prioritizing customer needs. Our dedicated support team is always ready to assist, ensuring a seamless experience.",
+        "At FMA Trading, we build lasting relationships by prioritizing customer needs. Our dedicated support team is always ready to assist, ensuring a seamless experience.",
       icon: <FaUsers className="text-orange-500 text-6xl" />,
     },
   ];
@@ -53,7 +53,7 @@ const Reasons: React.FC = () => {
       {/* Right Side - Text Content */}
       <div className="w-full lg:w-1/2">
         <h2 className="text-4xl font-bold text-orange-400 mb-6">
-          Why FMA Traders?
+          Why FMA Trading?
         </h2>
         {reasons.map((reason, index) => (
           <div key={index} className="flex items-start gap-4 mb-6">

@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 const features = [
   {
     image: "https://www.mahavirricemill.com/uploads/img/years.png",
-    text: "38+ Years Experience",
+    text: "+ Years Experience",
   },
   {
     image: "https://www.mahavirricemill.com/uploads/img/productioon.png",
@@ -53,9 +53,9 @@ const FeaturesSection: React.FC = () => {
 
           {/* ✅ About Section (Right Side) */}
           <div>
-            <h2 className="text-3xl font-bold mb-4">FMA Traders </h2>
+            <h2 className="text-3xl font-bold mb-4">FMA Trading </h2>
             <p className="text-gray-700 mb-4">
-            FMA Traders is a leading rice export company committed to delivering premium quality grains worldwide. With a strong foundation in agriculture and trade, they ensure excellence from sourcing to distribution. Their expertise, innovation, and dedication to customer satisfaction make them a trusted name in the global rice market.</p>
+            FMA Trading is a leading rice export company committed to delivering premium quality grains worldwide. With a strong foundation in agriculture and trade, they ensure excellence from sourcing to distribution. Their expertise, innovation, and dedication to customer satisfaction make them a trusted name in the global rice market.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <ul className="space-y-6">

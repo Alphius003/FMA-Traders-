@@ -53,14 +53,17 @@ const ProductsSection: React.FC = () => {
       {/* Product Cards Section with fade animation */}
       <section
         ref={sectionRef}
-        className="min-h-[100px] py-[6.5rem] px-8 -mt-9 bg-cover bg-center bg-no-repeat transition-opacity duration-700 ease-in-out opacity-0 translate-y-10"
+          className="py-16 px-4 sm:px-6 lg:px-8 -mt-10 bg-cover bg-center bg-no-repeat transition-opacity duration-700 ease-in-out opacity-0 translate-y-10"
+
+        // className="min-h-[100px] py-[6.5rem] px-8 -mt-10 bg-cover bg-center bg-no-repeat transition-opacity duration-700 ease-in-out opacity-0 translate-y-10"
         style={{
           backgroundImage: `url('/src/assets/Page 2.png')`,
+          minHeight: "calc(100vh - 300px)",
         }}
       >
-        <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
+        <div className="max-w-7xl mx-auto flex flex-col items-center text-center w-full">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
   {/* Basmati Card */}
   <div
     id="Basmati"
@@ -178,6 +181,8 @@ const ProductsSection: React.FC = () => {
           `}
         </style>
       </section>
+      <div className="pb-10"></div>
+
     </>
   );
 };

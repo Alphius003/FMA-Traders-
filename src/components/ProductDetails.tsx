@@ -45,7 +45,7 @@ const getImage = (imageName: string) => {
 const ProductDetails: React.FC = () => {
   const { productType } = useParams<{ productType?: string }>();
   const [showModal, setShowModal] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
+  // const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [selectedRice, setSelectedRice] = useState("");
@@ -77,7 +77,7 @@ const ProductDetails: React.FC = () => {
   const products = productData[productType];
 
   const handleCardClick = (productName: string) => {
-    setSelectedProduct(productName);
+    // setSelectedProduct(productName);
     setSelectedRice(productName);
     setShowModal(true);
   };

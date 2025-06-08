@@ -33,7 +33,7 @@ const GlobalPresenceSection: React.FC = () => {
           Global Dominance
         </h2>
         <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-8 leading-relaxed">
-          With over a decade of expertise, FMA Traders has rapidly built a reputation for excellence, earning the trust of customers worldwide. 
+          With over a decade of expertise, FMA Trading has rapidly built a reputation for excellence, earning the trust of customers worldwide. 
           Our unwavering commitment to quality and service has fostered strong, lasting partnerships with both new and long-standing clients. 
           Today, our market presence spans the Kingdom of Saudi Arabia, UAE, Iran, Iraq, Kuwait, Qatar, Bahrain, Serbia, Europe, and Egypt. 
           We are continuously expanding into new markets, driven by trust, innovation, and an unrelenting pursuit of perfection.
@@ -120,7 +120,7 @@ export default GlobalPresenceSection;
 //       <div className="container mx-auto px-6 text-center">
 //         <h2 className="text-4xl font-bold mb-6 text-gray-800">Global Dominance</h2>
 //         <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-8 leading-relaxed">
-//           With over a decade of expertise, FMA Traders has rapidly built a reputation for excellence, earning the trust of customers worldwide.
+//           With over a decade of expertise, FMA Trading has rapidly built a reputation for excellence, earning the trust of customers worldwide.
 //           Our unwavering commitment to quality and service has fostered strong, lasting partnerships with both new and long-standing clients.
 //           Today, our market presence spans the Kingdom of Saudi Arabia, UAE, Iran, Iraq, Kuwait, Qatar, Bahrain, Serbia, Europe, and Egypt.
 //           We are continuously expanding into new markets, driven by trust, innovation, and an unrelenting pursuit of perfection.
